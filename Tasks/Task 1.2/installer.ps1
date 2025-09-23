@@ -46,10 +46,10 @@ Write-Host "Установка языка Julia"
 winget install --accept-package-agreements --accept-source-agreements -e --id Julialang.Julia
 
 Write-Host "Установка языка Python"
-choco install python3
+choco install -y python3
 
 Write-Host "Установка языка Rust"
-choco install rustup.install
+choco install -y rustup.install
 
 Write-Host "Установка MSYS2"
 winget install --accept-package-agreements --accept-source-agreements -e --id MSYS2.MSYS2
