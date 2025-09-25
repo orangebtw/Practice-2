@@ -98,3 +98,6 @@ winget install --accept-package-agreements --accept-source-agreements -e --id Mi
 
 Write-Host "Установка Archi"
 winget install --accept-package-agreements --accept-source-agreements -e --id Archi.Archi
+
+Write-Host "Установка Arc"
+winget install --accept-package-agreements --accept-source-agreements -e --id TheBrowserCompany.Arc
