@@ -101,3 +101,25 @@ winget install --accept-package-agreements --accept-source-agreements -e --id Ar
 
 Write-Host "Установка Arc"
 winget install --accept-package-agreements --accept-source-agreements -e --id TheBrowserCompany.Arc
+
+#-------------------------------------------------------------------------------------------------------------------------
+
+$downloadsPath = (New-Object -ComObject Shell.Application).Namespace('shell:Downloads').Self.Path
+
+Write-Host "Скачивание SberJazz..."
+$outPath = "$downloadsPath\SberJazz.exe"
+$ProgressPreference = 'SilentlyContinue' # Отключаем показ прогресса, который В НЕСКОЛЬКО РАЗ замедляет скорость скачивания
+Invoke-WebRequest "http://dl.salutejazz.ru/desktop/latest/jazz.exe" -OutFile $outPath
+
+Write-Host "Установка SberJazz..."
+& $outPath /S
+
+#-------------------------------------------------------------------------------------------------------------------------
+
+Write-Host "Скачивание Yandex Telemost..."
+$outPath = "$downloadsPath\YandexTelemost.exe"
+$ProgressPreference = 'SilentlyContinue' # Отключаем показ прогресса, который В НЕСКОЛЬКО РАЗ замедляет скорость скачивания
+$userAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::Chrome # Нужно замаскировать запрос, как будто бы он идёт из настоящего браузера, чтобы яндекс не заставлял вводить капчу
+Invoke-WebRequest "https://telemost.yandex.ru/download-desktop" -OutFile $outPath -UserAgent $userAgent
+Write-Host "Установка Yandex Telemost..."
+& $outPath /verysilent
