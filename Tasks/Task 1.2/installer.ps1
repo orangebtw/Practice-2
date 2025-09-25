@@ -21,6 +21,9 @@ code --install-extension mhutchie.git-graph
 Write-Host "Установка расширения HTML CSS Support для VS Code"
 code --install-extension ecmel.vscode-html-css
 
+Write-Host "Установка расширения Rust Analyzer для VS Code"
+code --install-extension rust-lang.rust-analyzer
+
 Write-Host "Установка Chocolatey"
 winget install -e --id Chocolatey.Chocolatey
 
@@ -92,3 +95,6 @@ winget install --accept-package-agreements --accept-source-agreements -e --id Ya
 
 Write-Host "Установка Microsoft Edge"
 winget install --accept-package-agreements --accept-source-agreements -e --id Microsoft.Edge
+
+Write-Host "Установка Archi"
+winget install --accept-package-agreements --accept-source-agreements -e --id Archi.Archi
